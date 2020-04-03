@@ -14,17 +14,18 @@ cat score | tail -n 10
 
 cat score | awk 'BEGIN{OFS="\t"}{print $6, $7, $8, $9}' | awk '{print ($2 + $3 + $4)/($2 + $3 + $1)}' | tail -n 10
 
-cat score | awk 'BEGIN{OFS="\t"}{print $6, $7, $8, $9}' | awk '{print ($2 + $3 + $4)/($2 + $3 + $1)}' > wer_all.tsv
+cat score | awk 'BEGIN{OFS="\t"}{print $6, $7, $8, $9}' | awk '{print ($2 + $3 + $4)/($2 + $3 + $1)}' > wer_all.txt
 
 
-awk '{ sum += $1; n++ } END { print sum / n; }' < wer_all.tsv >> wer.txt
-
+awk '{ sum += $1; n++ } END { print sum / n; }' < wer_all.txt >> wer.tsv
 
 paste wikiniews_results.tsv wer.txt > wikinews_results.tsv
 rm wikiniews_results.tsv
 
-awk 'BEGIN{FS=OFS="\t"}{ bad = bad + $1; all++ }END{ print bad/all }' < wer.tsv >> wer.txt 
-awk 'BEGIN{FS=OFS="\t"}{ if ( $1 == 0 ) good++; all++ }END{ print good/all }' < wer.tsv >> srr.txt
+tail -n 50 wer.txt | sponge wer.txt
+tail -n 50 srr.txt | sponge srr.txt
+
+
 
 
 
