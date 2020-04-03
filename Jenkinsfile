@@ -21,10 +21,10 @@ pipeline {
 	}
 	stage('script')
 	{
-	steps{
+	step{
 		ls -l
 	}
-	steps{
+	step{
 		sh label: '', script: './scrypt.sh'
 	}
 	}
