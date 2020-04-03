@@ -22,7 +22,8 @@ pipeline {
 	stage('script')
 	{
 	steps{
-		sh label: '', script: 'wc -l wikiniews_results.tsv > wyniki.txt'
+		ls -l
+		sh label: '', script: './scrypt.sh'
 	}
 	}
    }
