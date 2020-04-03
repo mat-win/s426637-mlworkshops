@@ -7,7 +7,7 @@ pipeline {
             echo 'Hello World'
          }
       }
-	stage{'Checkout'}
+	stage('Checkout')
 	{
 	steps{
 		checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/mat-win/s426637-mlworkshops.git']]])
