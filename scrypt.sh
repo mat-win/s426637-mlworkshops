@@ -23,11 +23,8 @@ awk '{ sum += $1; n++ } END { print sum / n; }' < wer_all.txt >> wer.txt
 paste wikiniews_results.tsv wer.txt > wikinews_results.tsv
 rm wikiniews_results.tsv
 
-
-tail -n 50 wer.txt | sponge wer.txt
-tail -n 50 srr.txt | sponge srr.txt
-
-
+awk 'BEGIN{FS=OFS="\t"}{ bad = bad + $1; all++ }END{ print bad/all }' < wer.tsv >> wer.txt 
+awk 'BEGIN{FS=OFS="\t"}{ if ( $1 == 0 ) good++; all++ }END{ print good/all }' < wer.tsv >> srr.txt
 
 
 
