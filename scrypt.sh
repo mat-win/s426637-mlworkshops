@@ -10,6 +10,10 @@ awk 'BEGIN{FS=OFS="\t"}{print $0,"(sp1_"NR")"}' < hypothesis.txt > hypothesis.tr
 
 sclite -f 0 -r reference.trn trn -h hypothesis.trn trn -e utf-8 -i rm -o all stdout | grep 'Scores' > score
 
+cat score | tail -n 20
+
+awk 'BEGIN{OFS="\t"}{print $6, $7, $8, $9}' < scores | awk '{ print ($2 + $3 + $4)/($2 + $3 + $1) }' > wer.tsv
+
 
 
 
