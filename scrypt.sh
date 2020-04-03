@@ -17,7 +17,8 @@ cat score | awk 'BEGIN{OFS="\t"}{print $6, $7, $8, $9}' | awk '{print ($2 + $3 +
 cat score | awk 'BEGIN{OFS="\t"}{print $6, $7, $8, $9}' | awk '{print ($2 + $3 + $4)/($2 + $3 + $1)}' > wer_all.txt
 
 
-awk '{ sum += $1; n++ } END { print sum / n; }' < wer_all.txt >> wer.tsv
+awk '{ sum += $1; n++ } END { print sum / n; }' < wer_all.txt >> wer.txt
+
 
 paste wikiniews_results.tsv wer.txt > wikinews_results.tsv
 rm wikiniews_results.tsv
