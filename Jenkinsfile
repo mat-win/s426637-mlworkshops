@@ -23,7 +23,7 @@ pipeline {
       {
       	steps{
       		sh label: 'ls', script: 'ls -l'
-      		sh label: 'metrics', script: './skrypt.sh'
+      		sh label: 'metrics', script: './scrypt.sh'
       		
       	}
       }
