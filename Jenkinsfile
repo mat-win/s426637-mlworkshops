@@ -22,7 +22,7 @@ pipeline {
 	stage('script')
 	{
 	steps{
-		sh label: ', script: 'wc -l wikiniews_results.tsv > wyniki.txt'
+		sh label: '', script: 'wc -l wikiniews_results.tsv > wyniki.txt'
 	}
 	}
    }
