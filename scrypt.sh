@@ -4,7 +4,7 @@ cut -f2 wikiniews_results.tsv > hypothesis.txt
 cut -f3 wikiniews_results.tsv > reference.txt
 
 
-awk 'BEGIN{FS=OFS="\t"}{print $0,"(sp1_"NR")"}' < reference.txt > reference trn
+awk 'BEGIN{FS=OFS="\t"}{print $0,"(sp1_"NR")"}' < reference.txt > reference.trn
 
 awk 'BEGIN{FS=OFS="\t"}{print $0,"(sp1_"NR")"}' < hypothesis.txt > hypothesis.trn
 
