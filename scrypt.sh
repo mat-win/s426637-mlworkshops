@@ -1,1 +1,1 @@
-wc -l wikiniews_results.tsv > wyniki.txt
+wc -l wikiniews_results.tsv > wynik.txt
