@@ -23,6 +23,8 @@ pipeline {
 	{
 	steps{
 		ls -l
+	}
+	steps{
 		sh label: '', script: './scrypt.sh'
 	}
 	}
