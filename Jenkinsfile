@@ -22,7 +22,7 @@ pipeline {
 	stage('script')
 	{
 	steps{
-		sh label: ", script: './scrypt.sh'
+		sh label: '', script: './scrypt.sh'
 	}
 	}
    }
