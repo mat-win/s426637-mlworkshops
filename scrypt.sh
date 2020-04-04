@@ -22,8 +22,8 @@ awk '{ sum += $1; n++ } END { print sum / n; }' < wer_all.txt >> wer.tsv
 paste wikiniews_results.tsv wer.txt > wikinews_results.tsv
 rm wikiniews_results.tsv
 
-tail -n 50 wer.txt | sponge wer.txt
-tail -n 50 srr.txt | sponge srr.txt
+tail -n 50 wer.txt 
+tail -n 50 srr.txt 
 
 
 
