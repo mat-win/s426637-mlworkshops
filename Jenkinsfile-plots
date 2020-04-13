@@ -16,8 +16,8 @@ pipeline {
 	 stage('CopyArtifacts')
       {
       	steps{
-      		copyArtifacts filter: 'wer.txt', fingerprintArtifacts: true, projectName: 'ASR-eval', selector: lastSuccessful()
-		copyArtifacts filter: 'srr.txt', fingerprintArtifacts: true, projectName: 'ASR-eval', selector: lastSuccessful()		
+      		copyArtifacts filter: 'wer.txt', fingerprintArtifacts: true, projectName: 's426637-metrics', selector: lastSuccessful()
+      		copyArtifacts filter: 'srr.txt', fingerprintArtifacts: true, projectName: 's426637-metrics', selector: lastSuccessful()		
       	}
       }
       stage('Count metrics')
