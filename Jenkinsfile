@@ -1,5 +1,5 @@
 pipeline {
-   agent any
+   agent { dockerfile true }
 
    stages {
       stage('Hello') {
@@ -30,7 +30,17 @@ pipeline {
       stage('Archive metrics')
       {
       	steps{
+      		archiveArtifacts 'liczba_wierszy.txt'
       		archiveArtifacts 'wynik.txt'
+      		archiveArtifacts 'score'
+      		archiveArtifacts 'hypothesis.txt'
+      		archiveArtifacts 'reference.txt'
+     		archiveArtifacts 'hypothesis.trn'
+      		archiveArtifacts 'reference.trn'  
+      		archiveArtifacts 'wer_all.txt'
+      		archiveArtifacts 'wer.txt'
+      		archiveArtifacts 'srr.txt'
+      		archiveArtifacts 'wikinews_results.tsv'
       	}
       }
    }
