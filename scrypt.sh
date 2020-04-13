@@ -22,6 +22,11 @@ awk '{ sum += $1; n++ } END { print sum / n; }' < wer_all.txt >> wer.tsv
 paste wikiniews_results.tsv wer.txt > wikinews_results.tsv
 rm wikiniews_results.tsv
 
+calc(){ awk "BEGIN { print "$*" }"; }
+all_lines=$( wc -l < wer_all.txt )
+lines_with_0=$( grep -c '^0$' wer_all.txt )
+calc $lines_with_0/$all_lines >> srr.txt
+
 tail -n 50 wer.txt | sponge wer.txt
 tail -n 50 srr.txt | sponge srr.txt
 
