@@ -31,7 +31,7 @@ pipeline {
       stage('Archive metrics')
       {
       	steps{
-      		archiveArtifacts 'liczba_wierszy.txt'
+      		archiveArtifacts 'lwierszy.txt'
       		archiveArtifacts 'wynik.txt'
       		archiveArtifacts 'score'
       		archiveArtifacts 'hypothesis.txt'
