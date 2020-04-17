@@ -22,6 +22,7 @@ def main():
 	plt.ylabel(y_name)
 	
 	plt.savefig(out_f, dpi=300)
+	plt.close()
 
 if __name__ == "__main__":
 	main()
