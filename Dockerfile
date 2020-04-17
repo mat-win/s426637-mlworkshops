@@ -11,3 +11,4 @@ RUN git clone https://github.com/usnistgov/SCTK.git
 WORKDIR SCTK
 RUN make config && make all && make check &&  make install && make doc
 ENV PATH=$PATH:/SCTK/bin
+RUN pip install matplotlib
