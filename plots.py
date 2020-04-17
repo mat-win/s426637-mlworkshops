@@ -4,10 +4,10 @@ import sys
 
 def read_f(filename):
     values = []
-	with open(filename) as f_name:
-	    for line in f_name:
-		values.append(float(line.rstrip('\n')))
-	return values
+    with open(filename) as f_name:
+        for line in f_name:
+            values.append(float(line.rstrip('\n')))
+    return values
 
 def main():
     in_f = sys.argv[1]
