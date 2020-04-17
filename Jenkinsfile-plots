@@ -23,8 +23,8 @@ copyArtifacts filter: 'srr.txt', fingerprintArtifacts: true, projectName: 's4266
      
 	stage('Plots') {
             steps {
-                sh label: 'WER plot', script: './plots.py wer.txt wer.png'
-                sh label: 'SRR plot', script: './plots.py srr.txt srr.png'
+                sh label: 'WER plot', script: './wykresy.py wer.txt wer.png'
+                sh label: 'SRR plot', script: './wykresy.py srr.txt srr.png'
                 
             }
         }
