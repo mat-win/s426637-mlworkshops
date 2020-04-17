@@ -16,21 +16,20 @@ checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleC
 	 stage('CopyArtifacts')
       {
       	steps{
-copyArtifacts filter: 'wer.txt', fingerprintArtifacts: true, projectName: 's426637-metrics', selector: lastSuccessful()
-copyArtifacts filter: 'srr.txt', fingerprintArtifacts: true, projectName: 's426637-metrics', selector: lastSuccessful()		
+	copyArtifacts filter: 'wer.txt', fingerprintArtifacts: true, projectName: 's426637-metrics', selector: lastSuccessful()
+	copyArtifacts filter: 'srr.txt', fingerprintArtifacts: true, projectName: 's426637-metrics', selector: lastSuccessful()		
       	}
       }
      
 	stage('Plots') {
             steps {
                 sh label: 'WER plot', script: './plots.py wer.txt wer.png'
-                sh label: 'SRR plot', script: './plots.py srr.txt srr.png'
+             	sh label: 'SRR plot', script: './plots.py srr.txt srr.png'
                 
             }
         }
 	stage('Arch') {
             steps {
-             
                 archiveArtifacts 'wer.png'
                 archiveArtifacts 'srr.png'
             }
