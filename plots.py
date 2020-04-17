@@ -21,7 +21,7 @@ def main():
     y_name = in_f.split('.')[0]
     plt.ylabel(y_name)
 	
-    plt.savefig(out_f, dpi=300)
+    plt.savefig(out_f, dpi=800)
     plt.close()
 
 if __name__ == "__main__":
